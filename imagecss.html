@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Image CSS Editor</title>
+        <link rel="icon" type="image/icon" href="df.png">
+        <style type="text/css">
+        @font-face {
+            font-family: 'Varela Round';
+             font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/varelaround/v13/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            body {
+                background: url('image.jpg');
+                background-size: cover;
+            }
+            .ctr {
+                color:rgba(255, 20, 145, 0.87);
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 40px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 5px 6px 4px rgb(36, 36, 36);
+                padding-bottom: 50px;
+            }
+            .range {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 200px;
+                height:10px;
+                background: #a100ebad;
+                border-radius: 50px;
+                outline: none;
+                opacity:0.7;
+                transition: opacity .2s;
+            }   
+            .range:hover {
+                opacity:1;
+            }
+            .range::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                border-color: #bc00eb;
+                border-radius: 50px;
+                width: 20px;
+                height: 20px;
+                background: #bc00eb;
+                cursor: pointer;
+            }
+            .range::-moz-range-thumb {
+                outline: none;
+                border-radius: 50px;
+                width: 20px;
+                height: 20px;
+                background: #bc00eb;
+                cursor: pointer;
+            }
+            #ran3 {
+                border-radius: 5px;
+            }
+            .pad {
+                padding-left: 5px;
+                padding-right: 45px;
+            }
+            .label {
+                padding-right: 5px;
+                color:rgb(174, 0, 255);
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 16px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 1px 1px 4px rgb(20, 20, 20);
+            }
+        </style>
+        <script language="javascript">
+            function fn() {
+                var x=document.getElementById("ran").value;
+                document.getElementById("ran").title=x;
+                x/=100;
+                document.getElementById("img").style.opacity=x;
+                var y=document.getElementById("ran1").value;
+                document.getElementById("img").style.filter=`blur(${y}px)`;
+                var z=document.getElementById("ran2").value;
+                document.getElementById("img").style.borderRadius=`${z}px`;
+                var a=document.getElementById("ran3").value;
+                document.getElementById("img").style.border=`6px solid ${a}`;
+                }
+        </script>
+    </head>
+    <body>
+        <h1 class="ctr">Image CSS Editor</h1>
+        <center>
+        <div style="text-align: center;"><span class="pad"><label class="label">Opacity</label><input type="range" min="0" class="range" max="100" value="100" step="1" id="ran" onchange="fn()"></span>
+        <span class="pad"><label class="label">Blur</label><input type="range" min="0" class="range" max="10" value="0" step="0.1" id="ran1" onchange="fn()"></span>
+        <span class="pad"><label class="label">Radius</label><input type="range" min="0" class="range" max="50" value="0" step="0.2" id="ran2" onchange="fn()"></span>
+        <span class="pad"><label class="label" style="padding-right: 10px;">Border Color</label><input type="color" value="#ffffff" id="ran3" onchange="fn()"></span>
+    </div>
+        <br><br><br>
+        <img src="6.jpg" width="60%" height="500px" id="img" style="border:6px solid white;"/>
+    </center>
+    </body>
+</html>

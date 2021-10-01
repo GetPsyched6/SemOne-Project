@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Light to Dark</title>
+        <link rel="icon" type="image/icon" href="fl.png">
+        <style type="text/css">
+        body {
+            background-image: url('image.jpg');
+            background-size: cover;
+        }
+            @font-face {
+            font-family: 'Varela Round';
+             font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/varelaround/v13/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            :root {
+                --f: 1;
+                --s: 6.7%;
+                --l: 25%;
+                --side: 250px;
+                --mini: 225px;
+                }
+            .ctr {
+                color:rgba(255, 20, 145, 0.87);
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 40px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 5px 6px 4px rgb(36, 36, 36);
+                padding-bottom: 90px;
+            }
+            .one {
+                width:60%;
+                height:500px;
+                background-color: rgba(255, 255, 255, 0.2);
+                backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(120%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(120%);
+                border-radius: 25px;
+                border: 4px solid #ffffff70;
+            }
+            .two {
+                width:60%;
+                height:500px;
+                background-color: rgba(0, 0, 0, 0.2);
+                backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(75%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(75%);
+                border-radius: 25px;
+                border: 4px solid #91919160;
+            }
+            .btn {
+                background-color: #00000000;
+                text-decoration: underline;
+                width:150px;
+                height:50px;
+                font-size: 26px;
+                border-radius: 50px;
+                border: 2.5px solid #ffffff00;
+                vertical-align: middle;
+                font-family: 'Varela Round',arial;
+                color: #ffffffcc;
+                outline: none;
+                transition-duration: 0.2s;
+                text-align: center;
+            }
+            .btn:hover {
+                background-color: #ffffff20;
+                border: 2.5px solid #ffffff50;
+                transition-duration: 0.05s;
+                text-decoration: none;
+            }
+            .btn:active {
+                background-color: #ffffff50;
+                border: 2.5px solid #ffffff80;
+                text-decoration: none;
+            }
+            .three {
+                color:#2c2c2ce0;
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 40px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 2px 2px 7px #292929b2;
+                padding-bottom: 50px;
+            }
+            .four {
+                color:#ffffffe0;
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 40px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 2px 2px 5px #292929;
+                padding-bottom: 50px;
+            }
+            .rainbow {
+                height: var(--mini);
+                width: var(--mini);
+                border-radius: 15%;
+                box-shadow: 0 0 5px rgba(0,0,0,.5);
+                background: var(--gradients);
+                animation: rotate 5s linear infinite;
+                margin-top: 10px;
+                margin-bottom: 15px;
+                }
+            .rainbow1 {
+                height: var(--side);
+                width: var(--side);
+                border-radius: 50%;
+                box-shadow: 0 0 5px rgba(0,0,0,.5);
+                background: var(--gradients);
+                animation: rotate 5s linear infinite;
+                }
+
+            .rainbow {
+                --gradients: 
+                    radial-gradient(rgba(255,255,255,.5), rgba(255,255,255,0)),
+                    radial-gradient(circle at bottom var(--l) left var(--s), rgba(0,0,255, calc(var(--f)/2)), rgba(0, 0, 255, 0) 50%),
+                    radial-gradient(circle at bottom center, rgba(0, 255, 255, var(--f)), rgba(0, 255, 255, 0) 50%),
+                    radial-gradient(circle at bottom var(--l) right var(--s), rgba(0,255,0, var(--f)), rgba(0, 255, 0, 0) 50%),
+                    radial-gradient(circle at top var(--l) right var(--s), rgba(255,255,0, var(--f)), rgba(255, 255, 0, 0) 50%),
+                    radial-gradient(circle at top center, rgba(255,0,0, var(--f)), rgba(255, 0, 0, 0) 50%),
+                    radial-gradient(circle at top var(--l) left var(--s), rgba(255,0,255, var(--f)), rgba(255, 0, 255, 0) 50%),
+                    radial-gradient(circle at bottom var(--l) left var(--s), rgba(0,0,255, calc(var(--f)/2)), rgba(0, 0, 255, 0) 50%);
+                    
+                }
+                .rainbow1 {
+                --gradients: 
+                    radial-gradient(rgba(255,255,255,.5), rgba(255,255,255,0)),
+                    radial-gradient(circle at bottom var(--l) left var(--s), rgba(0,0,255, calc(var(--f)/2)), rgba(0, 0, 255, 0) 50%),
+                    radial-gradient(circle at bottom center, rgba(0, 255, 255, var(--f)), rgba(0, 255, 255, 0) 50%),
+                    radial-gradient(circle at bottom var(--l) right var(--s), rgba(0,255,0, var(--f)), rgba(0, 255, 0, 0) 50%),
+                    radial-gradient(circle at top var(--l) right var(--s), rgba(255,255,0, var(--f)), rgba(255, 255, 0, 0) 50%),
+                    radial-gradient(circle at top center, rgba(255,0,0, var(--f)), rgba(255, 0, 0, 0) 50%),
+                    radial-gradient(circle at top var(--l) left var(--s), rgba(255,0,255, var(--f)), rgba(255, 0, 255, 0) 50%),
+                    radial-gradient(circle at bottom var(--l) left var(--s), rgba(0,0,255, calc(var(--f)/2)), rgba(0, 0, 255, 0) 50%);
+                    
+                }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+        </style>
+        <script language="javascript">
+            var x=0;
+            function fn() {
+                if(x==0) {
+                document.getElementById("rect").className="two";
+                document.getElementById("txt").className="four";
+                document.getElementById("spin").className="rainbow1";
+                document.getElementById("txt").innerText="MacOS Transluscency Dark-Mode!";
+                x=1; }
+                else if(x==1) {
+                document.getElementById("rect").className="one";
+                document.getElementById("txt").className="three";
+                document.getElementById("spin").className="rainbow";
+                document.getElementById("txt").innerText="MacOS Transluscency Light-Mode!";
+                x=0; }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="ctr">Light to Dark Translucency</h1>
+        <center>
+            <div class="one" id="rect"><h1 class="three" id="txt">MacOS Transluscency Light-Mode!</h1><div id="spin" class="rainbow"></div>
+            <br><br><br>
+            <input type="button" id="tog" class="btn" value="Toggle" onclick="fn()">
+        </center>
+    </body>
+</html>

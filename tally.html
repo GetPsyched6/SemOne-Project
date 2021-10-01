@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <link rel="icon" type="image/icon" href="as.png">
+    <head>
+        <title>Tally Counter</title>
+        <style type="text/css">
+        @font-face {
+            font-family: 'Varela Round';
+            font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/varelaround/v13/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            body {
+                background: url('image.jpg');
+            }
+            .ctr {
+                color:rgba(130, 0, 190, 0.89);
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 200px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 5px 6px 4px rgb(36, 36, 36);
+                padding-bottom: 110px;
+            }
+            h1.ctr {
+                color:rgba(255, 20, 145, 0.87);
+                font-size: 40px;
+                padding-bottom: 50px;
+            }
+            .btn {
+                background-color: #00000007;
+                width:150px;
+                height:100px;
+                font-size: 80px;
+                border-radius: 50px;
+                border: 2.5px solid #ffffff35;
+                vertical-align: middle;
+                font-family: 'Varela Round';
+                color: #ffffffd2;
+                outline: none;
+                transition-duration: 0.3s;
+            }
+            .btn2 {
+                font-size: 23px;
+            }
+            .btn:hover {
+                background-color: #ffffff25;
+                border: 2.5px solid #ffffff50;
+                backdrop-filter: blur(1px);
+                transition-duration: 0.3s;
+            }
+            .btn:active {
+                background-color: #ffffff65;
+                border: 2.5px solid #ffffffa0;
+                backdrop-filter: blur(1px);
+            }
+            .pad {
+                padding-right: 50px;
+                padding-left: 50px;
+            }
+        </style>
+        <script language="javascript">
+            var a=0;
+            function minus() {
+                if(a>0) {
+                    a-=1;
+                document.getElementById("ctr").innerText=a;
+                }
+                else
+                document.getElementById("ctr").innerText=0;
+            }
+            function add() {
+                a+=1;
+                document.getElementById("ctr").innerText=a;
+            }
+            function reset() {
+                a=0;
+                document.getElementById("ctr").innerText="<0>";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="ctr">Tally Counter</h1>
+        <center>
+        <div class="ctr" id="ctr"><0></div>
+        <div>
+            <span>
+                <input type="button" class="btn btn1" id="min" value="−" onclick="minus();">
+            </span>
+            <span class="pad">
+                <input type="button" class="btn btn2" id="res" value="Reset" onclick="reset();">
+            </span>
+            <span>
+                <input type="button" class="btn btn3" id="add" value="+" onclick="add();">
+            </span>
+        </div>
+    </center>
+    </body>
+</html>

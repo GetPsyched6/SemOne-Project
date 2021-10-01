@@ -1,0 +1,148 @@
+<html>
+    <head>
+        <title>Launchpad</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="icon" type="image/icon" href="aicon.png">
+        <style type="text/css">
+        html {
+            user-select: none;
+        }
+            @font-face {
+            font-family: 'Varela Round';
+             font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/varelaround/v13/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+            body {
+                background-image: url('image.jpg');
+                background-size: cover;
+            }
+            img {
+                height:100px;
+                padding:4%;
+            }
+            a {
+                background-color: #ffffff15;
+                height:110px;
+                width: 110px;
+                display: inline-block;
+                border-radius: 75px;
+                margin: 12.5% 0 0 0;
+                transition-duration: 0.3s;
+                text-align: center;
+            }
+            a:hover {
+                background-color: #ffffff40;
+                transition-duration: 0.3s;
+            }
+            .time {
+                color: #ad00d8dd;
+                font-size: 80px;
+                text-align: center;
+                font-family: 'Varela Round',arial;
+                text-shadow: 2px 3px 5px #1a1a1a;
+                }
+            .text {
+                color:#bc00e2dd;
+                font-family: 'Varela Round',arial;
+                font-weight: 500;
+                font-size: 23px;
+                text-align: center;
+                margin: 12px 0 0 0;
+                text-shadow: 2px 2px 4px #000000;
+            }
+            .t1 {
+                margin: 0px 0 0 0;
+                letter-spacing: 1px;
+                font-size: 25px;
+            }
+            .t2 {
+                color:#b400d8dd;
+            }
+            .btn {
+                background-color: #00000000;
+                text-decoration: underline;
+                width:91.5px;
+                height:40px;
+                font-size: 18px;
+                border-radius: 50px;
+                border: 2.5px solid #ffffff00;
+                vertical-align: middle;
+                font-family: 'Varela Round',arial;
+                color: #ffffffd2;
+                outline: none;
+                transition-duration: 0.3s;
+                float:right;
+            }
+            .btn1:hover {
+                background-color: #ffffff25;
+                border: 2.5px solid #ffffff40;
+                backdrop-filter: blur(1px);
+                transition-duration: 0.3s;
+            }
+        </style>
+        <script language="javascript">
+            var q;
+            var watch;
+            watch=setInterval(validate,1000);
+            function sign(){
+                window.open('sign.html',"_self");
+            }
+            function link() {
+                window.open('link.html',"_blank");
+            }
+        function validate() {
+                var param=window.location.search;
+                let params = new URLSearchParams(param);
+                let q = (params.get("user"));
+                var x= new Date()
+                var hh=x.getHours();
+                var mm=x.getMinutes();
+                var ss=x.getSeconds();
+                var time="AM";
+        if(q!=null) {
+            document.getElementById("sign").innerHTML=`<span class="btn" style="text-decoration:none; font-size:25px;width:150px;color:#b400d8dd;text-shadow: 2px 2px 5px rgb(20, 20, 20);">Signed In <i class="material-icons" style="font-size: 32px; vertical-align: -7px;">&#xe876;</i></span>`;
+            document.getElementById("gm").style.marginTop="4px";
+            }
+            if(q==null) {
+            q="| Please Sign In 🡵";
+            }
+            if(hh>=12&&hh<17)
+                document.getElementById("gm").innerText=`Good Afternoon ${q} | Welcome to the Launchpad`;
+            else if(hh>=17&&hh<20)
+                document.getElementById("gm").innerText=`Good Evening ${q} | Welcome to the Launchpad`;
+            else if(hh>=20)
+                document.getElementById("gm").innerText=`Have a Good Night ${q} | Welcome to the Launchpad`;
+            else if(hh<6)
+                document.getElementById("gm").innerText=`Have a Good Night ${q} | Welcome to the Launchpad`;    
+                if(hh>=6&&hh<12)
+                document.getElementById("gm").innerText=`Good Morning ${q} | Welcome to the Launchpad`;
+                if(hh>=12&&hh<24)
+                {time="PM";
+                 if(hh!=12)
+                    hh-=12;}
+                 else
+                {if(hh==0)
+                {hh=12;
+                    time="AM";}
+                else
+                    time="AM";
+                }
+    if(mm<10)
+        document.getElementById("time").innerHTML=`${hh}:0${mm} <span style="font-size: 78px">${time}</span>`;
+    else if(mm>=1)
+        document.getElementById("time").innerHTML=`${hh}:${mm} <span style="font-size: 78px">${time}</span>`;
+    }    
+        </script>
+    </head>
+    <body onload="validate();">
+        <div style="padding-top: 10px; padding-right: 10px;" id="sign"><input type="button" value="Sign in" class="btn btn1" id="btn" onclick="sign()"></div>
+        <div style="padding-bottom: 110px;"></div>
+        <div class="time" id="time">00:00:00</div>
+        <div class="text t1" id="gm">Good Morning X | Welcome to the Launchpad</div>
+        <center><a href="link.html" target="_blank"><img src="aicon.png"></a></center>
+        <div class="text t2"><span onclick="link();">&nbsp;Launch <i class="material-icons" style="font-size: 20px; vertical-align: -2px;">&#xe89e;</i></span></div>
+    </body>
+</html>

@@ -1,0 +1,112 @@
+<html>
+<head>
+    <link rel="icon" type="image/icon" href="cs.png">
+    <title>
+        Currency Converter
+    </title>
+    <script language="javascript" src="currency.js"></script>
+    <style>
+         @font-face {
+            font-family: 'Varela Round';
+             font-style: normal;
+            font-weight: 900;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/varelaround/v13/w8gdH283Tvk__Lua32TysjIfp8uP.woff2) format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+            }
+        .box {
+                background-color: rgba(0, 0, 0, 0.3);
+                font-size: 15px;
+                border-radius: 25px;
+                border: 2.5px solid #ffffff30;
+                vertical-align: middle;
+                font-family: 'Varela Round',arial;
+                color: #ffffffb7;
+                outline: none;
+                backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(75%);
+                -webkit-backdrop-filter: blur(20px) saturate(160%) contrast(45%) brightness(75%);
+                padding-left: 8px;
+                padding-right: 3px;
+            }
+            .box:focus {
+                border: 2.5px solid #ffffffc5;
+            }
+        .btn1 {
+                background-color: #ffffff20;
+                width:45px;
+                height:33px;
+                font-size: 20px;
+                border-radius: 50px;
+                border: 2.5px solid #ffffff30;
+                vertical-align: middle;
+                font-family: 'Varela Round',arial;
+                color: #ffffffcc;
+                outline: none;
+                transition-duration: 0.2s;
+                text-align: center;
+            }
+            .btn:hover {
+                background-color: #ffffff40;
+                border: 2.5px solid #ffffff60;
+                transition-duration: 0.05s;
+                text-decoration: none;
+            }
+            .btn:active {
+                background-color: #ffffff60;
+                border: 2.5px solid #ffffff90;
+                text-decoration: none;
+            }
+            ::placeholder
+            {
+                color: rgba(211, 211, 211, 0.726);
+            }
+        .cvt {
+            width:89.5%;
+            height:100%;
+            background-color: maroon;
+            color: white;
+            border:2px solid red;
+            font-size: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            transition-duration: 0.2s;
+            outline:none;
+        }
+        .cvt:hover{
+            border:2px solid white;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('1.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;" >
+    <h1 style="font-family: courier new; color:dodgerblue; text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);" id="clr"><u id="name">Aurora Lake</u></h1>
+    <h3 style="font-family: courier new; color:dodgerblue; text-shadow: 0px 0px 0px rgba(0, 0, 0, 0);" id="abt">Click these buttons to change the Background Picture</h3>
+    <input type="button" value="1" id="a" class="btn btn1" onclick="a()"><font color="lavenderblush" face="courier new"><b> &nbsp;</b></font>
+    <input type="button" value="2" id="c" class="btn btn1" onclick="c()"><font color="lavenderblush" face="courier new"><b> &nbsp;</b></font>
+    <input type="button" value="3" id="e" class="btn btn1" onclick="e()">
+    <br><br style="line-height: 25px;">
+    <input type="button" value="4" id="f" class="btn btn1" onclick="f()"><font color="lavenderblush" face="courier new"><b> &nbsp;</b></font>
+    <input type="button" value="5" id="g" class="btn btn1" onclick="g()"><font color="lavenderblush" face="courier new"><b> &nbsp;</b></font>
+    <input type="button" value="6" id="h" class="btn btn1" onclick="h()">
+    <br><br><br><br><br  style="line-height: 5px;">
+    <h3 style="letter-spacing: 1.15px; font-size: 22px; font-family: courier new; color:dodgerblue; text-shadow: 0px 0px 0px black;" id="cc">&thinsp;&thinsp;<u>Currency Converter</u></h3>
+    <table>
+        <tr align="left">
+    <td><input type="text" id="rupee" autofocus autocomplete="off" class="box" size="30" placeholder="Indian Rupee"><font color="lavenderblush" face="courier new"><b>&thinsp; ₹</b></font></td></tr>
+    <tr><td><input type="button" value="Convert" class="cvt" id="convert" onclick="dollar();cd();euro();pnd();ad();sws();yen();dhs();kr();oz();"></td>
+    </tr>
+    <tr><td height="25"></td></tr>
+    <tr>
+    <tr><td><input type="text" id="dollar" autocomplete="off" class="box" readonly size="30" placeholder="American Dollar"><font color="lavenderblush" face="courier new"><b>&thinsp; $</b></font></td></tr>
+    <tr><td><input type="text" id="cdollar" autocomplete="off" class="box" readonly size="30" placeholder="Canadian Dollar"><font color="lavenderblush" face="courier new"><b>&thinsp;  $</b></font></td></tr>
+    <tr><td><input type="text" id="adollar" autocomplete="off" class="box" readonly size="30" placeholder="Australian Dollar"><font color="lavenderblush" face="courier new"><b>&thinsp;  $</b></font></td></tr>
+    <tr><td><input type="text" id="pound" autocomplete="off" class="box" readonly size="30" placeholder="British Pound Sterling"><font color="lavenderblush" face="courier new"><b>&thinsp;  £</b></font></td></tr>
+    <tr><td><input type="text" id="euro" autocomplete="off" class="box" readonly size="30" placeholder="Euro"><font color="lavenderblush" face="courier new"><b>&thinsp;  €</b></font></td></tr>
+    <tr><td><input type="text" id="franc" autocomplete="off" class="box" readonly size="30" placeholder="Swiss Franc"><font color="lavenderblush" face="courier new"><b>&thinsp;  ₣</b></font></td></tr>
+    <tr><td><input type="text" id="yen" autocomplete="off" class="box" readonly size="30" placeholder="Japanese Yen"><font color="lavenderblush" face="courier new"><b>&thinsp;  ¥</b></font></td></tr>
+    <tr><td><input type="text" id="aed" autocomplete="off" class="box" readonly size="30" placeholder="Emarati Dirham"><font color="lavenderblush" face="courier new"><b>&thinsp;د.إ</b></font></td></tr>
+    <tr><td><input type="text" id="krona" autocomplete="off" class="box" readonly size="30" placeholder="Swedish Krona"><font color="lavenderblush" face="courier new"><b> kr</b></font></td></tr>
+    <tr><td><input type="text" id="auoz" autocomplete="off" class="box" readonly size="30" placeholder="Gold Ounce"><font color="lavenderblush" face="courier new"><b> Oz</b></font></td></tr>
+    </table>
+</body>
+</html>
